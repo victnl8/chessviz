@@ -1,3 +1,4 @@
+#include "board.h"
 void Board(char A[8][8])
 {
     int i, j;

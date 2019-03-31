@@ -3,12 +3,12 @@ CC = gcc
 
 .PHONY: all clean
 
-all: folder main
+all: folder bin/main
 
 folder:
 		mkdir bin build -p
 
-bin/main: build/main.o build/buard_print_plain.o build/board.o
+bin/main: build/main.o build/board_print_plain.o build/board.o
 		$(CC) $(CFLAGS) $^ -o $@
 
 build/main.o: scr/main.c
@@ -18,7 +18,7 @@ build/board.o: scr/board.c
 		$(CC) -c $(CFLAGS) $^ -o $@
 
 
-build/board_print_plain.o: src/board_print_plain.cpp
+build/board_print_plain.o: scr/board_print_plain.c
 		$(CC) -c $(CFLAGS) $^ -o $@
 
 clean:

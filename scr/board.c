@@ -1,3 +1,5 @@
+#include "board.h"
+
 void Move(char A[8][8])
 {
     char hod1[6], hod2[6], temp, B[8][8];
