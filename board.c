@@ -1,4 +1,4 @@
-int move(char A[8][8])
+void Move(char A[8][8])
 {
     char hod1[6], hod2[6], temp, B[8][8];
     int pos1, pos2, m1, m2, i;
