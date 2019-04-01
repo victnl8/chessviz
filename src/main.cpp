@@ -12,6 +12,11 @@ char A[8][8] = {{'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
 int main()
 {
     Board(A);
-    Move(A);
+    int k = 0;
+    while (true) {
+        cout << k + 1 << ". ";
+        Move(A);
+        k++;
+    }
     return 0;
 }
