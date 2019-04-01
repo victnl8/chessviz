@@ -21,6 +21,10 @@ void Move(char A[8][8])
     }
     A[m2][pos2] = A[m1][pos1];
     A[m1][pos1] = 32;
+    for (i = 0; i < 5; i++) {
+        cout << hod1[i];
+    }
+    cout << endl;
     Board(A);
     printf("\n");
     pos1 = hod2[0] - 97;
@@ -34,5 +38,10 @@ void Move(char A[8][8])
     }
     A[m2][pos2] = A[m1][pos1];
     A[m1][pos1] = 32;
+    for (i = 0; i < 5; i++) {
+        cout << hod2[i];
+    }
+    cout << endl;
     Board(A);
+    cout << endl;
 }
