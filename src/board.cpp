@@ -8,7 +8,7 @@ void Move(char A[8][8])
         cin >> hod1[i];
     }
     for (i = 0; i < 5; i++) {
-        cin >> hod2[i]);
+        cin >> hod2[i];
     }
     pos1 = hod1[0] - 97;
     pos2 = hod1[3] - 97;
@@ -21,7 +21,7 @@ void Move(char A[8][8])
     }
     A[m2][pos2] = A[m1][pos1];
     A[m1][pos1] = 32;
-    draw(A);
+    Board(A);
     printf("\n");
     pos1 = hod2[0] - 97;
     pos2 = hod2[3] - 97;
