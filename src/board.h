@@ -1,5 +1,6 @@
 #ifndef BOARD_H
 #define BOARD_H
+#include <iostream>
 #include <stdio.h>
 #include <stdlib.h>
 using namespace std;

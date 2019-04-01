@@ -5,10 +5,10 @@ void Move(char A[8][8])
     char hod1[6], hod2[6];
     int pos1, pos2, m1, m2, i;
     for (i = 0; i < 5; i++) {
-        cin << hod1[i];
+        cin >> hod1[i];
     }
     for (i = 0; i < 5; i++) {
-        cin << hod2[i]);
+        cin >> hod2[i]);
     }
     pos1 = hod1[0] - 97;
     pos2 = hod1[3] - 97;
