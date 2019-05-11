@@ -1,9 +1,10 @@
 CFLAGS = -Wall -Werror
 CC = g++
+GTEST_DIR = thirdparty/googletest
 
 .PHONY: all clean
 
-all: folder bin/main test
+all: folder bin/main
 
 folder:
 		mkdir bin build build/test -p
@@ -24,11 +25,17 @@ build/board_print_plain.o: src/board_print_plain.cpp
 clean:
 		rm build/*.o
 
-test: folder test/lib bin/test/test.o
+test: folder testlib bin/test
 
-test/lib:
-		$(CC) -I thirdparty src -c test/board_test.c -o build/test/board_test.o
+testlib:
+	g++ -std=c++11 -isystem ${GTEST_DIR}/include -I${GTEST_DIR} \
+    -pthread -c ${GTEST_DIR}/src/gtest-all.cc -o build/test/gtest-all.o
+	ar -rv build/test/libgtest.a build/test/gtest-all.o
 
-bin/test/test.o: test/test.cpp
+bin/test: build/test/test.o  $(obj2)
+	g++ -std=c++11 -isystem ${GTEST_DIR}/include -pthread $^ \
+	build/test/libgtest.a -o $@
+
+build/test/test.o: test/test.cpp
 		$(CC) -c $(CFLAGS) $^ -o $@
 
