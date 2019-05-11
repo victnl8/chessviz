@@ -23,19 +23,13 @@ build/board_print_plain.o: src/board_print_plain.cpp
 		$(CC) -c $(CFLAGS) $^ -o $@
 
 clean:
-		rm build/*.o
+		rm build/test/*.o build/*.o bin/* 
 
-test: folder testlib bin/test
+test: folder bin/test
 
-testlib:
-	g++ -std=c++11 -isystem ${GTEST_DIR}/include -I${GTEST_DIR} \
-    -pthread -c ${GTEST_DIR}/src/gtest-all.cc -o build/test/gtest-all.o
-	ar -rv build/test/libgtest.a build/test/gtest-all.o
-
-bin/test: build/test/test.o  $(obj2)
-	g++ -std=c++11 -isystem ${GTEST_DIR}/include -pthread $^ \
+bin/test: build/test/test.o
+	g++ -std=c++11 -isystem thirdparty/googletest/include -pthread $^ \
 	build/test/libgtest.a -o $@
 
 build/test/test.o: test/test.cpp
 		$(CC) -c $(CFLAGS) $^ -o $@
-
