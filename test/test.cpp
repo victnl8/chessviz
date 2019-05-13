@@ -2,17 +2,17 @@
 
 TEST(PrimaryTest, FirstPrimaryTest)
 {
-    EXPECT_EQ(18.0, 18.0); // true
-}
-
-TEST(PrimaryTest, SecondPrimaryTest)
-{
-    EXPECT_EQ(25.4, 25.0); // false
+    EXPECT_EQ(18.0, 18.0);
 }
 
 TEST(PrimaryTest, ThirdPrimaryTest)
 {
-    EXPECT_EQ(50.3321, 50.3321); // true
+    EXPECT_EQ(50.3, 50.3);
+}
+
+TEST(PrimaryTest, ThirdPrimaryTest)
+{
+    EXPECT_EQ(12.3, 12.3);
 }
 
 int main(int argc, char** argv)
