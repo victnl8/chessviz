@@ -2,7 +2,7 @@ CFLAGS = -Wall -Werror
 CC = g++
 GTEST_DIR = thirdparty/googletest
 
-.PHONY: all clean
+.PHONY: all clean test
 
 all: folder bin/main
 
