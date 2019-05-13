@@ -11,6 +11,7 @@ char A[8][8] = {{'R', 'N', 'B', 'Q', 'K', 'B', 'N', 'R'},
 
 int main()
 {
+    cout << "If you want stop enter 'Escape'" << endl;
     Board(A);
     int k = 0;
     while (true) {
